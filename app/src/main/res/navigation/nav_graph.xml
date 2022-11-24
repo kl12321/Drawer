@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/overViewFragment">
+
+    <fragment
+        android:id="@+id/overViewFragment"
+        android:name="com.example.drawer.fragments.OverViewFragment"
+        android:label="fragment_over_view"
+        tools:layout="@layout/fragment_over_view" >
+        <action
+            android:id="@+id/action_overViewFragment_to_largeFragment"
+            app:destination="@id/largeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/largeFragment"
+        android:name="com.example.drawer.fragments.LargeFragment"
+        android:label="fragment_large"
+        tools:layout="@layout/fragment_large" >
+        <action
+            android:id="@+id/action_largeFragment_to_overViewFragment"
+            app:destination="@id/overViewFragment" />
+        <argument
+            android:name="pixabay"
+            app:argType="android.os.Bundle" />
+    </fragment>
+</navigation>
